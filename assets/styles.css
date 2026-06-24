@@ -9,7 +9,9 @@
 /* Fallback scaled to Shantell's width so the swap causes no reflow */
 @font-face {
   font-family: "Shantell Fallback";
-  src: local("Arial"), local("Helvetica Neue"), local("Helvetica"), local("Roboto"), local("Liberation Sans");
+  src:
+    local("Arial"), local("Helvetica Neue"), local("Helvetica"),
+    local("Roboto"), local("Liberation Sans");
   size-adjust: 111%;
 }
 
@@ -25,7 +27,7 @@
   --ink: #ece7dc;
   --soft: #a39c8d;
   --paper: #171511;
-  --line: rgba(236, 231, 220, 0.30);
+  --line: rgba(236, 231, 220, 0.3);
   color-scheme: dark;
 }
 
@@ -48,7 +50,9 @@ body {
   font-weight: 400;
   font-size: 17px;
   line-height: 1.75;
-  transition: background-color 0.35s ease, color 0.35s ease;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
 
 .wrap {
@@ -90,8 +94,12 @@ a:hover {
 }
 
 @media (max-width: 1040px) {
-  .doodle { display: none; }
-  .avatar-mobile { display: block; }
+  .doodle {
+    display: none;
+  }
+  .avatar-mobile {
+    display: block;
+  }
 }
 
 .theme-toggle {
@@ -107,11 +115,17 @@ a:hover {
   align-items: center;
   justify-content: center;
   line-height: 0;
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
 }
 
-.theme-toggle:empty { display: none; } /* no JS -> no empty button */
-.theme-toggle svg { display: block; }
+.theme-toggle:empty {
+  display: none;
+} /* no JS -> no empty button */
+.theme-toggle svg {
+  display: block;
+}
 
 .theme-toggle:focus-visible {
   outline: 2px solid var(--ink);
@@ -151,7 +165,9 @@ a:hover {
 }
 
 @media (max-width: 1040px) {
-  .toggle-plain { display: inline-flex; }
+  .toggle-plain {
+    display: inline-flex;
+  }
 }
 
 .name {
@@ -202,6 +218,10 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body { transition: none; }
-  .toggle-doodle:hover { transform: translate(-50%, -50%); }
+  body {
+    transition: none;
+  }
+  .toggle-doodle:hover {
+    transform: translate(-50%, -50%);
+  }
 }

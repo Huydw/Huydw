@@ -50,7 +50,7 @@ const setTheme = (theme, { persist } = {}) => {
 toggles.forEach((button) =>
   button.addEventListener("click", () => {
     setTheme(currentTheme() === "dark" ? "light" : "dark", { persist: true });
-  })
+  }),
 );
 
 // Follow the OS, but only until the visitor has made a manual choice.
