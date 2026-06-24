@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phan Huy Tran</title>
+  <meta name="description" content="Web developer, PHP and Symfony.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #2b2a27;
+      --soft: #6c6960;
+      --paper: #fbf9f4;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Shantell Sans", system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .wrap {
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 17vh 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(43, 42, 39, 0.28);
+    }
+
+    a:hover {
+      border-bottom-color: var(--ink);
+    }
+
+    .avatar-desktop {
+      position: absolute;
+      top: 12vh;
+      right: -140px;
+      height: 188px;
+      width: auto;
+    }
+
+    .avatar-mobile {
+      display: none;
+      height: 80px;
+      width: auto;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 1040px) {
+      .avatar-desktop { display: none; }
+      .avatar-mobile { display: block; }
+    }
+
+    .name {
+      font-weight: 600;
+      font-size: 30px;
+      letter-spacing: -0.3px;
+      margin: 0 0 26px;
+    }
+
+    .statement {
+      font-size: 21px;
+      line-height: 1.6;
+      max-width: 34ch;
+      margin: 0 0 18px;
+    }
+
+    .statement-sub {
+      font-size: 18px;
+      color: var(--soft);
+      max-width: 40ch;
+      margin: 0;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 0;
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    .contact-dot {
+      color: var(--soft);
+      margin: 0 12px;
+    }
+
+    @media (max-width: 520px) {
+      .contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .contact-dot {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <img class="avatar-desktop" src="avatar.png" alt="" width="134" height="215">
+    <img class="avatar-mobile" src="avatar.png" alt="" width="134" height="215">
+    <h1 class="name">Phan Huy Tran</h1>
+    <p class="statement">Web developer, PHP and Symfony.</p>
+    <p class="statement-sub">Worked on the Bayer 04 Leverkusen online shop and built internal tools during my apprenticeship at Team Neusta in Bremen.</p>
+    <p class="contact">
+      <a href="mailto:phanhuytran55@gmail.com">phanhuytran55@gmail.com</a>
+      <span class="contact-dot" aria-hidden="true">&middot;</span>
+      <a href="tel:+4917627884566">+49 176 27884566</a>
+      <span class="contact-dot" aria-hidden="true">&middot;</span>
+      <a href="https://www.linkedin.com/in/phan-huy-tran-aa7944186/">linkedin</a>
+    </p>
+  </main>
+</body>
+</html>
