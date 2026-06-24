@@ -122,16 +122,16 @@ a:hover {
   outline-offset: 4px;
 }
 
-/* Sun in dark mode (click → light), moon in light mode (click → dark) */
-.theme-toggle .icon-sun {
+/* The sky through the window: sun in light mode, moon in dark mode */
+.theme-toggle .icon-moon {
   display: none;
 }
 
-:root[data-theme="dark"] .theme-toggle .icon-sun {
+:root[data-theme="dark"] .theme-toggle .icon-moon {
   display: block;
 }
 
-:root[data-theme="dark"] .theme-toggle .icon-moon {
+:root[data-theme="dark"] .theme-toggle .icon-sun {
   display: none;
 }
 
