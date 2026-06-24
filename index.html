@@ -16,20 +16,22 @@
       type="font/woff2"
       crossorigin
     />
-    <script>
-      // Apply the saved/OS theme before first paint to avoid a flash. Must stay a
-      // classic blocking inline script — a module or external file runs too late.
-      try {
-        const stored = localStorage.getItem("theme");
-        const dark = stored
-          ? stored === "dark"
-          : matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.dataset.theme = dark ? "dark" : "light";
-      } catch {
-        document.documentElement.dataset.theme = "light";
-      }
-    </script>
     <link rel="stylesheet" href="assets/styles.css" />
+    <script>
+      // Set the theme before first paint so there's no flash of the wrong mode.
+      (function () {
+        let theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (!theme) {
+          theme = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
   </head>
   <body>
     <main class="wrap">
@@ -42,10 +44,25 @@
           height="430"
         />
         <button
-          class="theme-toggle toggle-doodle"
+          class="theme-toggle theme-toggle--window"
           type="button"
           aria-label="Toggle dark mode"
-        ></button>
+        >
+          <img
+            class="icon-moon"
+            src="assets/moon.webp"
+            alt=""
+            width="64"
+            height="64"
+          />
+          <img
+            class="icon-sun"
+            src="assets/sun.webp"
+            alt=""
+            width="64"
+            height="64"
+          />
+        </button>
       </div>
       <img
         class="avatar-mobile"
@@ -71,11 +88,25 @@
       </p>
     </main>
     <button
-      class="theme-toggle toggle-plain"
+      class="theme-toggle theme-toggle--corner"
       type="button"
       aria-label="Toggle dark mode"
-    ></button>
-
+    >
+      <img
+        class="icon-moon"
+        src="assets/moon.webp"
+        alt=""
+        width="64"
+        height="64"
+      />
+      <img
+        class="icon-sun"
+        src="assets/sun.webp"
+        alt=""
+        width="64"
+        height="64"
+      />
+    </button>
     <script type="module" src="assets/theme.js"></script>
   </body>
 </html>
