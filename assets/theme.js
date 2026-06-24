@@ -1,6 +1,8 @@
 // The initial theme is applied inline in <head> (before paint); this module
 // only handles changes after load.
 
+import { sun, moon, sunStatic, moonStatic } from "./icons.js";
+
 const STORAGE_KEY = "theme";
 const prefersDark = matchMedia("(prefers-color-scheme: dark)");
 const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -25,10 +27,25 @@ const saveTheme = (theme) => {
 
 const currentTheme = () => document.documentElement.dataset.theme;
 
+// Parse each icon string into a <template> once; render() clones its content so
+// the SMIL intro re-plays on every toggle.
+const toTemplate = (svg) => {
+  const template = document.createElement("template");
+  template.innerHTML = svg;
+  return template;
+};
+
+const icons = {
+  sun: toTemplate(sun),
+  moon: toTemplate(moon),
+  "sun-static": toTemplate(sunStatic),
+  "moon-static": toTemplate(moonStatic),
+};
+
 const iconTemplate = (theme) => {
   const name = theme === "dark" ? "moon" : "sun";
   const motion = prefersReducedMotion.matches ? "-static" : "";
-  return document.getElementById(`icon-${name}${motion}`);
+  return icons[`${name}${motion}`];
 };
 
 // Cloning a fresh SVG re-plays its SMIL intro on every toggle.
